@@ -2,12 +2,9 @@ package com.hamburgerbutton;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import com.hamburgerbutton.HamburgerButton.Layer;
-import com.hamburgerbutton.HamburgerButton.Layer.Item;
 import com.nineoldandroids.animation.ValueAnimator;
 import com.nineoldandroids.animation.ValueAnimator.AnimatorUpdateListener;
-
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
@@ -43,7 +40,6 @@ public class HamburgerButton extends View {
 
 	public HamburgerButton(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		// TODO Auto-generated constructor stub
 		mContext = context;
 		progressStart = 0.0f;
 		progressEnd = 0.26f;
@@ -101,7 +97,6 @@ public class HamburgerButton extends View {
 
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-		// TODO Auto-generated method stub
 		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
 		SIZE = this.getMeasuredWidth() < this.getMeasuredHeight() ? this
@@ -113,6 +108,7 @@ public class HamburgerButton extends View {
 		initPath();
 	}
 
+	@SuppressLint("DrawAllocation")
 	@Override
 	public void onDraw(Canvas canvas) {
 
@@ -199,7 +195,6 @@ public class HamburgerButton extends View {
 
 				@Override
 				public void onAnimationUpdate(ValueAnimator animation) {
-					// TODO Auto-generated method stub
 
 					float frameValue = (Float) animation.getAnimatedValue();
 					progressStart = frameValue;
@@ -218,7 +213,6 @@ public class HamburgerButton extends View {
 
 				@Override
 				public void onAnimationUpdate(ValueAnimator animation) {
-					// TODO Auto-generated method stub
 
 					float frameValue = (Float) animation.getAnimatedValue();
 					progressEnd = frameValue;
@@ -238,7 +232,6 @@ public class HamburgerButton extends View {
 
 				@Override
 				public void onAnimationUpdate(ValueAnimator animation) {
-					// TODO Auto-generated method stub
 
 					float frameValue = (Float) animation.getAnimatedValue();
 					topY = (int) frameValue;
@@ -255,7 +248,6 @@ public class HamburgerButton extends View {
 
 				@Override
 				public void onAnimationUpdate(ValueAnimator animation) {
-					// TODO Auto-generated method stub
 					float frameValue = (Float) animation.getAnimatedValue();
 					bottomY = (int) frameValue;
 					invalidate();
@@ -272,7 +264,6 @@ public class HamburgerButton extends View {
 
 				@Override
 				public void onAnimationUpdate(ValueAnimator animation) {
-					// TODO Auto-generated method stub
 
 					float frameValue = (Float) animation.getAnimatedValue();
 					progressStart = frameValue;
@@ -288,7 +279,6 @@ public class HamburgerButton extends View {
 
 				@Override
 				public void onAnimationUpdate(ValueAnimator animation) {
-					// TODO Auto-generated method stub
 
 					float frameValue = (Float) animation.getAnimatedValue();
 					progressEnd = frameValue;
@@ -304,7 +294,6 @@ public class HamburgerButton extends View {
 
 				@Override
 				public void onAnimationUpdate(ValueAnimator animation) {
-					// TODO Auto-generated method stub
 
 					float frameValue = (Float) animation.getAnimatedValue();
 					topY = (int) frameValue;
@@ -321,7 +310,6 @@ public class HamburgerButton extends View {
 
 				@Override
 				public void onAnimationUpdate(ValueAnimator animation) {
-					// TODO Auto-generated method stub
 					float frameValue = (Float) animation.getAnimatedValue();
 					bottomY = (int) frameValue;
 					invalidate();
